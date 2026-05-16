@@ -1,0 +1,99 @@
+.card-servico {
+  height: 100%;
+}
+
+.card-servico-inner {
+  height: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-servico-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--card-color, var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card-servico-inner:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.card-servico-inner:hover::before {
+  opacity: 1;
+}
+
+/* Ícone */
+.card-servico-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--card-color, var(--color-accent)) 15%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-color, var(--color-accent));
+  flex-shrink: 0;
+}
+
+/* Tag */
+.card-servico-tag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-color, var(--color-accent));
+  background: color-mix(in srgb, var(--card-color, var(--color-accent)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-color, var(--color-accent)) 30%, transparent);
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+}
+
+/* Texto */
+.card-servico-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-servico-descricao {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* Link */
+.card-servico-link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--card-color, var(--color-accent));
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.2s ease;
+  display: inline-block;
+}
+
+.card-servico-link:hover {
+  opacity: 0.8;
+}
